@@ -14,3 +14,7 @@ class LoginPage(BasePage):
     def click_on_forgot_password(self):
         self.click_on_element(self.locators.FORGOT_PASSWORD_BUTTON)
 
+    @allure.step("Проверка видимости кнопки входа")
+    def is_login_button_visible(self): # проверка видимости кнопки входа
+        return self.is_element_visible(self.locators.SUBMIT_BUTTON_LOGIN_TO_ACCOUNT)
+

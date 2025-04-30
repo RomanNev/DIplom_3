@@ -12,7 +12,7 @@ class  ProfilePage(BasePage):
         super().__init__(driver)
         self.url = Urls.profile_page_url
         self.locators = ProfilePageLocators()
-        self.locators_login_page = LoginPageLocators()
+       # self.locators_login_page = LoginPageLocators()
 
     @allure.step("Проверка текста на странице профиля")
     def is_profile_info_text_correct(self): # Проверяет, что текст в профиле соответствует ожидаемому
@@ -29,9 +29,7 @@ class  ProfilePage(BasePage):
     def click_on_logout_button(self): # клик по кнопке выхода из аккаунта
         self.click_on_element(self.locators.BUTTON_LOGOUT_PROFILE)
 
-    @allure.step("Проверка видимости кнопки входа")
-    def is_login_button_visible(self): # проверка видимости кнопки входа
-        return self.is_element_visible(self.locators_login_page.SUBMIT_BUTTON_LOGIN_TO_ACCOUNT)
+
 
     @allure.step("Получение номера последнего заказа в истории")
     def get_last_order_number_in_history_user(self): # получаем последний заказ пользователя
